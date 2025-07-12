@@ -1,0 +1,164 @@
+/* Modern & Clean Chatbot CSS */
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif; /* Using a more modern font like Inter */
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Soft gradient background */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use min-height for better responsiveness */
+    align-items: center; /* Center the chat container horizontally */
+    justify-content: center; /* Center the chat container vertically */
+}
+
+#chat-app { /* A new wrapper for the entire chat application */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+    width: 90%;
+    max-width: 700px; /* Max width for readability */
+    display: flex;
+    flex-direction: column;
+    min-height: 600px; /* Minimum height for a substantial chat window */
+    overflow: hidden;
+    margin: 20px; /* Add some margin around the app */
+}
+
+header {
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* Professional gradient for header */
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600; /* Slightly bolder font-weight */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for header */
+}
+
+#chat-container {
+    flex: 1;
+    padding: 1.5rem; /* Increased padding */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Space between messages */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.message {
+    max-width: 75%; /* Slightly less width for better alignment */
+    padding: 1.1rem 1.4rem; /* Adjusted padding */
+    border-radius: 20px; /* More rounded corners */
+    line-height: 1.6; /* Improved line height for readability */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow for messages */
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+.user {
+    background-color: #e6f7ff; /* Lighter, calming blue */
+    color: #333;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px; /* "Tail" effect */
+}
+
+.bot {
+    background-color: #f0f2f5; /* Light grey for bot, feels more neutral */
+    color: #333;
+    border: none; /* Remove border for cleaner look */
+    align-self: flex-start;
+    border-bottom-left-radius: 5px; /* "Tail" effect */
+}
+
+#input-area {
+    display: flex;
+    padding: 1rem 1.5rem; /* Consistent padding */
+    background: #f8f9fa; /* Very light background for input area */
+    border-top: 1px solid #e0e0e0; /* Softer border */
+    gap: 10px; /* Space between input and button */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 0.9rem 1.2rem; /* Adjusted padding */
+    border-radius: 25px; /* Pill shape for input */
+    border: 1px solid #d0d0d0;
+    font-size: 1.05rem;
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#userInput:focus {
+    border-color: #2193b0; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2); /* Soft focus ring */
+}
+
+#sendBtn {
+    padding: 0.9rem 1.5rem;
+    background-color: #2193b0; /* Blue accent */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Pill shape for button */
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#sendBtn:hover {
+    background-color: #1a7b93; /* Darker blue on hover */
+}
+
+#sendBtn:active {
+    transform: translateY(1px); /* Slight press effect */
+}
+
+.loader {
+    align-self: flex-start;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    font-size: 0.9rem;
+    padding-left: 1.4rem; /* Align with bot message padding */
+}
+
+/* Optional: Add a subtle scrollbar style */
+#chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 10px;
+}
+
+#chat-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #chat-app {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+    header {
+        border-radius: 0;
+    }
+    #input-area {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .message {
+        max-width: 90%; /* Allow messages to take more width on small screens */
+    }
+}
